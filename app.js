@@ -16,6 +16,8 @@ dotenv.config({path:'.env'});
 // routes
 const categoryRoutes = require('./routes/Category/category');
 const foodItemRoutes = require('./routes/FoodItem/foodItem');
+const userRoutes = require('./routes/User/User');
+const pinRoutes = require('./routes/Pin/pin');
 
 
 
@@ -47,7 +49,10 @@ app.use(cors({credentials:true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api',categoryRoutes);
-app.use('/api',foodItemRoutes);
+app.use('/api/category',categoryRoutes);
+app.use('/api/foodItem',foodItemRoutes);
+app.use('/api/user',userRoutes);
+app.use('/api/pin',pinRoutes);
+
 
 module.exports = app;

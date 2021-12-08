@@ -6,12 +6,12 @@ exports.createCategoryController = async (req,res) => {
     Object.keys(body).forEach((key) => {
         categoryObj[key] = body[key];
     })
-    console.log("category obj===>>",categoryObj);
+    // console.log("category obj===>>",categoryObj);
     let resObj = await categoryService.createCategory(req,res,{categoryObj});
     if(resObj.err) {
         return res.status(500).json(resObj);
     }
-    return res.status(200).json(categoryObj);
+    return res.status(200).json(resObj);
 }
 
 exports.getAllCategoryController = async (req,res) => {

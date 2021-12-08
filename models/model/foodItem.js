@@ -8,6 +8,12 @@ const foodItemSchema = new Schema({
         required: true,
         minLength: 1
     },
+    lowerName: {
+        type: String,
+        trim: true,
+        required: true,
+        lowercase: true
+    },
     price: {
         type: Number,
         required: true,
@@ -29,6 +35,10 @@ const foodItemSchema = new Schema({
         type: String,
         default: null
     },
+    sold: {
+        type: Number,
+        default: 0
+    }
     // images: [
 
     // ]
